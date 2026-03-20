@@ -2,6 +2,7 @@
 title: "Introduction to SAS"
 layout: "home"
 description: "This guide gives users an introduction to SAS. The topics covered are importing, exploring, modifying, and managing data. It has been created using SAS 9.4. The main dataset used is the flights dataset. It contains the US domestic flights in January 2020[1]. For additional support, fill out the support request form."
+created_date: 2021-09-13
 staff:
     - name: Nadia Muhe
       link: https://library.utoronto.ca/staff/nadia-muhe
