@@ -6,6 +6,9 @@ created_date: 2021-09-13
 staff:
     - name: Nadia Muhe
       link: https://library.utoronto.ca/staff/nadia-muhe
+maintainer:
+ - name: Nadia Muhe
+   link: https://library.utoronto.ca/staff/nadia-muhe
 permalink: "/"  #! Remove this if not the homepage
 ---
 
@@ -301,6 +304,6 @@ run;
 
 [2] [SAS Documentation](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/pgmsashome/home.htm).
 
-[3] [Additional resources](http://stats.idre.ucla.edu.myaccess.library.utoronto.ca/sas/) to learn SAS.
+[3] [Additional resources](http://stats.idre.ucla.edu/sas/) to learn SAS.
 
 Tools: [SAS](https://mdl.library.utoronto.ca/tools/sas-0)
