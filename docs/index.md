@@ -1,35 +1,42 @@
 ---
 title: "Introduction to SAS"
 layout: "home"
-description: ""
+description: "This guide gives users an introduction to SAS. The topics covered are importing, exploring, modifying, and managing data. It has been created using SAS 9.4. The main dataset used is the flights dataset. It contains the US domestic flights in January 2020[1]. For additional support, fill out the support request form."
+created_date: 2021-09-13
+staff:
+    - name: Nadia Muhe
+      link: https://library.utoronto.ca/staff/nadia-muhe
+maintainer:
+ - name: Nadia Muhe
+   link: https://library.utoronto.ca/staff/nadia-muhe
 permalink: "/"  #! Remove this if not the homepage
 ---
 
 # Introduction to SAS
 
-This guide gives users an introduction to SAS. The topics covered are importing, exploring, modifying, and managing data. It has been created using SAS 9\.4\. The main dataset used is the flights dataset. It contains the US domestic flights in January 2020\[1]. For additional support, fill out the [support request form](https://mdl.library.utoronto.ca/about/contact-form).
+This guide gives users an introduction to SAS. The topics covered are importing, exploring, modifying, and managing data. It has been created using SAS 9.4. The main dataset used is the flights dataset. It contains the US domestic flights in January 2020[1]. For additional support, fill out the [support request form](https://mdl.library.utoronto.ca/about/contact-form).
 
  
 
 **TABLE OF CONTENTS**
 ---------------------
 
-[Getting Started](#gs)  
+[Getting Started](#getting-started)  
   
-[Importing Data](#id)  
+[Importing Data](#importing-data)  
   
-[Exploring Data](#ed)  
+[Exploring Data](#exploring-data)  
   
-[Graphs](#gr)  
+[Graphs](#graphs)  
   
-[New Variables](#nv)  
+[New Variables](#new-variables)  
   
-[Managing Data](#md)  
+[Managing Data](#managing-data)  
   
-[Resources](#re)
+[Resources](#resources)
 
-**Getting Started**
--------------------
+## **Getting Started**
+{: #getting-started}
 
 You can write and execute commands in the **Editor** window. SAS commands are not case sensitive and usually begin with **proc** or **data** and end with **run**.
 
@@ -45,15 +52,14 @@ To find detailed documentation of SAS commands, you can click on “Help” and 
 
  
 
-**Importing Data**
-------------------
+## **Importing Data**
+{: #importing-data}
 
 **DATA:** [flights.csv](https://uoft.me/flightscsv)
 
-To import a csv file into SAS, we use the procedure **proc import**. A line of code in SAS ends with a semi\-colon. The same line of code can be broken up into multiple lines if the line is long. Here, we specify that the importing file is in the csv format with the *dbms* statement, and we are creating an output object called “flights” with the statement *out*. We will call the “flights” object in all the subsequent codes where we analyze this “flights” dataset.
+To import a csv file into SAS, we use the procedure **proc import**. A line of code in SAS ends with a semi-colon. The same line of code can be broken up into multiple lines if the line is long. Here, we specify that the importing file is in the csv format with the *dbms* statement, and we are creating an output object called “flights” with the statement *out*. We will call the “flights” object in all the subsequent codes where we analyze this “flights” dataset.
 
 ```
-
 proc import file = "filename"
 dbms=csv 
 out=flights;
@@ -61,23 +67,21 @@ run;
 ```
  
 
-**Exploring Data**
-------------------
+## **Exploring Data**
+{: #exploring-data}
 
 You can create frequency tables and crosstabs using **proc freq** with the statement *tables*. You can specify multiple variables at once to create multiple tables.
 
 Here, we create two separate frequency tables for the “depdelay” and “arrdelay” variables.
 
 ```
-
 proc freq data=flights;
 tables depdelay arrdelay;
 run;
 ```
-If you want to crosstabulate “depdelay” and “arrdelay,” you simply put an asterisk (\*) between the two variables.
+If you want to crosstabulate “depdelay” and “arrdelay,” you simply put an asterisk (*) between the two variables.
 
 ```
-
 proc freq data=flights;
 tables depdelay*arrdelay;
 run;
@@ -85,7 +89,6 @@ run;
 If you only want to see percentages in our crosstabulation table, you can add additional options after the forward slash (/).
 
 ```
-
 proc freq data=flights;
 tables depdelay*arrdelay / norow nocol nofreq;
 run;
@@ -93,7 +96,6 @@ run;
 To produce summary statistics such as mean and standard deviation, we use the procedure **proc means** and the *var* statement specifies the variable of interest.
 
 ```
-
 proc means data=flights;
 var distance;
 run;
@@ -123,8 +125,8 @@ run;
 ```
  
 
-**Graphs**
-----------
+## **Graphs**
+{: #graphs}
 
 The **proc sgplot** procedure can be used to create histograms, bar charts, and scatterplots. You can specify additional options after defining your chart type in the second line. More information on **proc sgplot** can be found in “SAS Help and Documentation.”
 
@@ -174,12 +176,12 @@ run;
 
  
 
-**New Variables**
------------------
+## **New Variables**
+{: #new-variables}
 
-To create new variables, we must first create a duplicate copy of the flights dataset (here, called “flights2”) and create new variables within the flights2 dataset. This prevents overwriting of the original data. We create a new dataset called “flights2” using **data** and then we use *set* to specify that we are using the “flights” data to create “flights2\.”
+To create new variables, we must first create a duplicate copy of the flights dataset (here, called “flights2”) and create new variables within the flights2 dataset. This prevents overwriting of the original data. We create a new dataset called “flights2” using **data** and then we use *set* to specify that we are using the “flights” data to create “flights2.”
 
-You can create multiple variables at the same time. The first variable we want to create is “distancemiles” by multiplying the “distance” variable with 0\.621\. The second variable we want create is a variable called “instate”. It identifies flights that took place within the same state when the “originstate” and “deststate” of the flight are the same. We first create an empty “instate” variable by specifying “instate\=.”, then we code instate as “1” or “0” depending on whether the “originstate” and “deststate are the same are not. We specify the condition using the *if* statement. In SAS, not equal is written as “^\=”.
+You can create multiple variables at the same time. The first variable we want to create is “distancemiles” by multiplying the “distance” variable with 0.621. The second variable we want create is a variable called “instate”. It identifies flights that took place within the same state when the “originstate” and “deststate” of the flight are the same. We first create an empty “instate” variable by specifying “instate=.”, then we code instate as “1” or “0” depending on whether the “originstate” and “deststate are the same are not. We specify the condition using the *if* statement. In SAS, not equal is written as “^=”.
 
 ```
 
@@ -213,8 +215,8 @@ run;
 ```
  
 
-**Managing Data**
------------------
+## **Managing Data**
+{: #managing-data}
 
 ### Subsetting Data
 
@@ -234,7 +236,7 @@ You can check which variables are in this dataset using **proc contents**.
 proc contents data=flights2;
 run;
 ```
-To subset by observations, you use **data** to create a new dataset and specify the criteria to keep observations. Here, we indicate that we want to keep observations if “deststate” is Hawaii AND “dayofmonth” is 1\.
+To subset by observations, you use **data** to create a new dataset and specify the criteria to keep observations. Here, we indicate that we want to keep observations if “deststate” is Hawaii AND “dayofmonth” is 1.
 
 ```
 
@@ -295,13 +297,13 @@ run;
 ```
  
 
-**Resources**
--------------
+## **Resources**
+{: #resources}
 
-\[1] The flights dataset is modified from the [original version](https://www.kaggle.com/divyansh22/flight-delay-prediction) of the Kaggle website.
+[1] The flights dataset is modified from the [original version](https://www.kaggle.com/divyansh22/flight-delay-prediction) of the Kaggle website.
 
-\[2] [SAS Documentation](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/pgmsashome/home.htm).
+[2] [SAS Documentation](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/pgmsashome/home.htm).
 
-\[3] [Additional resources](http://stats.idre.ucla.edu.myaccess.library.utoronto.ca/sas/) to learn SAS.
+[3] [Additional resources](http://stats.idre.ucla.edu/sas/) to learn SAS.
 
-Tools: [SAS](/tools/sas-0)**Date Created:** 2021\-09\-13**Updated:** 2022\-12\-20
+Tools: [SAS](https://mdl.library.utoronto.ca/tools/sas-0)
