@@ -305,5 +305,3 @@ run;
 [2] [SAS Documentation](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/pgmsashome/home.htm).
 
 [3] [Additional resources](http://stats.idre.ucla.edu/sas/) to learn SAS.
-
-Tools: [SAS](https://mdl.library.utoronto.ca/tools/sas-0)
