@@ -1,8 +1,8 @@
 ---
-title: 
+title: Resources
 parent: Introduction to SAS
 layout: default
-nav_order: 
+nav_order: 7
 ---
 
 ## **Resources**
