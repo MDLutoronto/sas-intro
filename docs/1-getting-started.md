@@ -2,6 +2,13 @@
 title: Getting Started
 parent: Introduction to SAS
 layout: default
+created_date: 2021-09-13
+staff:
+    - name: Nadia Muhe
+      link: https://library.utoronto.ca/staff/nadia-muhe
+maintainer:
+    - name: Nadia Muhe
+      link: https://library.utoronto.ca/staff/nadia-muhe
 nav_order: 1
 ---
 
@@ -18,3 +25,5 @@ The **Explorer** window allows you to see the file libraries where you can impor
 You execute SAS code by highlighting the lines of code in the **Editor** window and then clicking on “Submit” – which is the running person icon (fourth icon from the right).
 
 To find detailed documentation of SAS commands, you can click on “Help” and find the “SAS Help and Documentation” document.
+
+**Technique:** [Data Visualization](https://mdlutoronto.github.io/tutorials-search/?technique=Data+Visualization), [Searching for maps and data](https://mdlutoronto.github.io/tutorials-search/?technique=Searching+for+maps+and+data) \| **Tools:** [SimplyAnalytics](https://mdlutoronto.github.io/tutorials-search/?tool=SimplyAnalytics) \| **Data Format:** [Statistics](https://mdlutoronto.github.io/tutorials-search/?dataFormat=Statistics), [Vector](https://mdlutoronto.github.io/tutorials-search/?dataFormat=Vector)
