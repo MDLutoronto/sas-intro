@@ -17,6 +17,6 @@ has_toc: false
 
 # Introduction to SAS
 
-This guide gives users an introduction to SAS. The topics covered are importing, exploring, modifying, and managing data. It has been created using SAS 9.4. The main dataset used is the flights dataset. It contains the US domestic flights in January 2020[1]. For additional support, fill out the [support request form](https://mdl.library.utoronto.ca/about/contact-form).
+This guide gives users an introduction to SAS. The topics covered are importing, exploring, modifying, and managing data. It has been created using SAS 9.4. The main dataset used is the flights dataset. It contains the US domestic flights in January 2020[1]. For additional support, fill out the [support request form](https://library.utoronto.ca/contact-us/data-maps).
 
 **Technique:** [Data Visualization](https://mdlutoronto.github.io/tutorials-search/?technique=Data+Visualization), [Searching for maps and data](https://mdlutoronto.github.io/tutorials-search/?technique=Searching+for+maps+and+data) \| **Tools:** [SimplyAnalytics](https://mdlutoronto.github.io/tutorials-search/?tool=SimplyAnalytics) \| **Data Format:** [Statistics](https://mdlutoronto.github.io/tutorials-search/?dataFormat=Statistics), [Vector](https://mdlutoronto.github.io/tutorials-search/?dataFormat=Vector)
